@@ -58,7 +58,7 @@ install: build
 release: build-all
 	@if [ -z "$(VERSION)" ]; then echo "Usage: make release VERSION=v1.0.0"; exit 1; fi
 	@echo "Pushing to public remote..."
-	go run ./cmd/gitdual push public "Release $(VERSION)"
+	go run ./cmd/gitdual push public --force "Release $(VERSION)"
 	@echo "Creating GitHub release $(VERSION)..."
 	gh release create $(VERSION) \
 		--repo $(GITHUB_REPO) \
