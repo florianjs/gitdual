@@ -69,7 +69,6 @@ release: build-all
 		bin/gitdual-linux-amd64 \
 		bin/gitdual-linux-arm64 \
 		bin/gitdual-windows-amd64.exe
-	go run ./cmd/gitdual release $(VERSION) --message "$(VERSION)"
 
 install-local: build
 	@echo "Installing gitdual to $(GOPATH)/bin..."
